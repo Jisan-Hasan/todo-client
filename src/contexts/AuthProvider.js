@@ -32,11 +32,11 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     };
     // update user & photo url
-    const updateUserProfile = (name, image) => {
+    const updateUserProfile = (name) => {
         setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
-            photoURL: image,
+            // photoURL: image,
         });
     };
 
