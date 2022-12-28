@@ -45,13 +45,13 @@ const Header = () => {
                     <Navbar.Toggle />
                 </div>
                 <Navbar.Collapse>
-                    <Link to="/" className="hover:text-blue-600">
+                    <Link to="/addTask" className="hover:text-blue-600">
                         Add Task
                     </Link>
-                    <Link className="hover:text-blue-600" to="/jobs">
+                    <Link to='/myTask' className="hover:text-blue-600">
                         My Task
                     </Link>
-                    <Link to="/blogs" className="hover:text-blue-600">
+                    <Link to="/completedTask" className="hover:text-blue-600">
                         Completed Tasks
                     </Link>
                 </Navbar.Collapse>

@@ -1,9 +1,9 @@
-import { Button, FileInput, Label, TextInput } from "flowbite-react";
+import { Button, Label, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { toast } from "react-hot-toast";
 
 const Signup = () => {
     const { createUser, signInWithGoogle, updateUserProfile } =
@@ -20,7 +20,7 @@ const Signup = () => {
 
         // console.log(name, email, password);
         createUser(email, password).then(result => {
-            const user = result.user;
+            // const user = result.user;
             updateUserProfile(name).then(() => {
                 toast.success("Register Successfully!");
                 navigate('/');
@@ -32,7 +32,7 @@ const Signup = () => {
 
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(result => {
-            const user = result.user;
+            // const user = result.user;
              // show success
              toast.success("Signin Successfully.");
              navigate("/");
