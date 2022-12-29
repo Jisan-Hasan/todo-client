@@ -88,13 +88,13 @@ const MyTask = () => {
 
     if (!tasks.length) {
         return (
-            <div className="flex justify-center items-center w-full h-[80vh]">
+            <div className="flex justify-center items-center w-full h-[80vh] dark:text-white">
                 <p className="font-bold text-2xl">No Task Remaining</p>
             </div>
         );
     }
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto dark:text-white">
             <h3 className="text-center text-3xl font-bold">Remaining Task</h3>
             <div className="mt-10">
                 <Table hoverable={true}>

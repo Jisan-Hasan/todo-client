@@ -28,7 +28,7 @@ const AddTask = () => {
             });
     };
     return (
-        <div className="max-w-lg mx-auto mt-10  md:mt-14 bg-gray-100 px-12 py-14 rounded-xl divide-y-2">
+        <div className="max-w-lg mx-auto mt-10  md:mt-14 bg-gray-100 dark:bg-gray-700 dark:text-white px-12 py-14 rounded-xl divide-y-2">
             <h3 className="text-3xl font-bold mb-5 text-center">Add A Task</h3>
             <form onSubmit={handleSubmit} className="flex flex-col">
                 {/* Title */}

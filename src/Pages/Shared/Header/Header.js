@@ -1,11 +1,13 @@
 import { Button, Navbar } from "flowbite-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
+    const [dark, setDark] = useState(false);
 
     const handleLogout = () => {
         logout()
@@ -14,6 +16,14 @@ const Header = () => {
                 toast.error(`err.message`);
             });
     };
+    const handleTheme = theme => {
+        setDark(!dark);
+        if(theme){
+            document.getElementById("document-body").classList.add("dark")
+        } else{
+            document.getElementById("document-body").classList.remove("dark");
+        }
+    }
     return (
         <>
             <Navbar
@@ -26,7 +36,12 @@ const Header = () => {
                         TODO
                     </span>
                 </Link>
-                <div className="flex gap-2 md:order-2">
+                <div className="flex items-center gap-2 md:order-2">
+                    <div onClick={() => handleTheme(!dark)} className="cursor-pointer">
+                        {
+                            dark ? <MdOutlineLightMode className="dark:text-white" size={25}/> : <MdDarkMode  size={25}/>
+                        }
+                    </div>
                     {!user ? (
                         <Link to="/login">
                             <Button color="success" pill={true}>
@@ -44,7 +59,7 @@ const Header = () => {
                     )}
                     <Navbar.Toggle />
                 </div>
-                <Navbar.Collapse>
+                <Navbar.Collapse className="dark:text-white hover:text-blue-600">
                     <Link to="/addTask" className="hover:text-blue-600">
                         Add Task
                     </Link>

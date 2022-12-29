@@ -20,6 +20,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [dark, setDark] = useState(false);
 
     // create user with email & password
     const createUser = (email, password) => {
@@ -80,6 +81,8 @@ const AuthProvider = ({ children }) => {
         signIn,
         resetPassword,
         logout,
+        dark,
+        setDark,
     };
 
     return (

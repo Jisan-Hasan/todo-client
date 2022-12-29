@@ -41,7 +41,7 @@ const Login = () => {
             });
     };
     return (
-        <div className="max-w-lg mx-auto mt-10  md:mt-14 lg:mt-20 bg-gray-100 px-12 py-14 rounded-xl divide-y-2">
+        <div className="max-w-lg mx-auto mt-10  md:mt-14 lg:mt-20 bg-gray-100 px-12 py-14 rounded-xl divide-y-2 dark:bg-gray-500 dark:text-slate-50">
             <h3 className="text-3xl font-bold mb-5 text-center">Login</h3>
             <form onSubmit={handleSubmit} className="flex flex-col">
                 <div className="mt-4">
